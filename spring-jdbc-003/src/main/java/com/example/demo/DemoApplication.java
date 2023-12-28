@@ -2,6 +2,7 @@ package com.example.demo;
 
 
 import com.example.demo.DatabaseConnectionDAO.DatabaseInteraction;
+import com.example.demo.models.datainput.StudentDataInput;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -17,9 +18,18 @@ public class DemoApplication {
 		ApplicationContext context = new ClassPathXmlApplicationContext("BeansConfigaration.xml");
 
 		DatabaseInteraction databaseInteraction = context.getBean("DatabaseInteraction", DatabaseInteraction.class);
+		StudentDataInput studentDataInput = context.getBean("studentDataInput", StudentDataInput.class);
 
-		databaseInteraction.insertData();
+
+		//databaseInteraction.insertData();
+
+		//databaseInteraction.batchInsertion(studentDataInput.studentModelArrayList());
+
+		//databaseInteraction.getStudentData();
+
+		databaseInteraction.printStudentModel();
+
+		//databaseInteraction.printStudentModel();
 
 	}
-
 }

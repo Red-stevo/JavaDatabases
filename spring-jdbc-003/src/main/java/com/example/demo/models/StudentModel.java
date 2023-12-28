@@ -1,5 +1,8 @@
 package com.example.demo.models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class StudentModel {
 
     private String fName;
@@ -30,5 +33,10 @@ public class StudentModel {
 
     public void setRegno(String regno) {
         this.regno = regno;
+    }
+
+    public String toString()
+    {
+        return "  fName " + fName + "  sName " + sName + "  regno " + regno;
     }
 }
