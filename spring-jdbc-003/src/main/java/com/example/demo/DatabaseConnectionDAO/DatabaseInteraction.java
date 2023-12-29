@@ -55,7 +55,7 @@ public class DatabaseInteraction {
         String sql = "INSERT INTO studentInfo (`student-first-name`,\t`student-second-name`,\t`student-regno`) VALUES (?,?,?)";
         ArrayList<Object[]> sqlargs = new ArrayList<>();
 
-        //Moving the student studentList to the sqlargs
+        //Moving the student studentList to the sql-args
         for(StudentModel studentModel : studentList)
         {
             Object[] studentObject = {studentModel.getfName(), studentModel.getsName(),studentModel.getRegno()};
@@ -86,5 +86,15 @@ public class DatabaseInteraction {
         {
             System.out.println(studentModel);
         }
+    }
+
+    public StudentModel getStudentById(String studentId)
+    {
+        String selectSql = "SELECT * FROM studentInfo WHERE `student-regno` = ?;";
+        StudentModel studentModel = jdbcTemplate.queryForObject(selectSql, new StudentRowMappingDAO(), studentId);
+
+        System.out.println(studentModel);
+
+        return studentModel;
     }
 }

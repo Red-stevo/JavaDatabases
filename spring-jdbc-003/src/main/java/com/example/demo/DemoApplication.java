@@ -3,6 +3,7 @@ package com.example.demo;
 
 import com.example.demo.DatabaseConnectionDAO.DatabaseInteraction;
 import com.example.demo.models.datainput.StudentDataInput;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -27,9 +28,11 @@ public class DemoApplication {
 
 		//databaseInteraction.getStudentData();
 
-		databaseInteraction.printStudentModel();
+		//databaseInteraction.printStudentModel();
 
 		//databaseInteraction.printStudentModel();
+
+		databaseInteraction.getStudentById("C026-01-0900/2021");
 
 	}
 }

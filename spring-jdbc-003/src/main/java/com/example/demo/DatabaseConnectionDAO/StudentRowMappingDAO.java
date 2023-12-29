@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Component
-public class StudentRowMappingDAO implements RowMapper {
+public class StudentRowMappingDAO implements RowMapper<StudentModel> {
 
     @Override
     public StudentModel mapRow(ResultSet rs, int rowNum) throws SQLException {
