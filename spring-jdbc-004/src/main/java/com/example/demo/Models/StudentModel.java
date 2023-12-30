@@ -12,8 +12,7 @@ public class StudentModel {
 
     private String StudentEmail;
 
-
-    public String StudentName() {
+    public String getStudentName() {
         return StudentName;
     }
 
@@ -21,7 +20,7 @@ public class StudentModel {
         StudentName = studentName;
     }
 
-    public String StudentPassword() {
+    public String getStudentPassword() {
         return StudentPassword;
     }
 
@@ -29,7 +28,7 @@ public class StudentModel {
         StudentPassword = studentPassword;
     }
 
-    public String StudentEmail() {
+    public String getStudentEmail() {
         return StudentEmail;
     }
 
