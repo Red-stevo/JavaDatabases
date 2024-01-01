@@ -19,7 +19,7 @@ public class DemoApplication {
 
 		StudentService studentService = context.getBean("studentService", StudentService.class);
 
-		System.out.println(studentService.batchInsertionData());
+		//System.out.println(studentService.batchInsertionData());
 
 		System.out.println(studentService.studentData());
 
@@ -27,9 +27,9 @@ public class DemoApplication {
 
 		studentService.findStudentByEmail("Stevenmuish@gmail.com");
 
-		studentService.deleteStudent("joseph.maina22@students.dkut.ac.ke");
+		//studentService.deleteStudent("joseph.maina22@students.dkut.ac.ke");
 
-		studentDao.cleanUpDataBase();
+	//	studentDao.cleanUpDataBase();
 
 
 	}
