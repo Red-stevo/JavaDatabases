@@ -3,6 +3,7 @@ package com.example.demo;
 
 import com.example.demo.Configaration.DatabaseConfig;
 import com.example.demo.Repository.StudentRepository;
+import com.example.demo.StudentDao.StudentManipulationDao;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,12 +15,10 @@ public class DemoApplication {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(DatabaseConfig.class);
 
-		StudentRepository studentRepository = context.getBean(
-				"studentRepository", StudentRepository.class);
+		StudentManipulationDao studentManipulationDao =
+				context.getBean("studentManipulationDao", StudentManipulationDao.class);
 
-
-
-
+		studentManipulationDao.testSearch();
 
 	}
 

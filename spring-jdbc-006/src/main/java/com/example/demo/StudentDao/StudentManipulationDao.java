@@ -2,6 +2,7 @@ package com.example.demo.StudentDao;
 
 import com.example.demo.Models.StudentModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -89,5 +90,18 @@ public class StudentManipulationDao implements StudentDaoInterface{
                     
                     The table is Cleaned up....>>>>""");
         }
+    }
+
+    public void testSearch()
+    {
+        final String sql = "SELECT COALESCE(COUNT(*), 0) FROM studentInfo WHERE " +
+            "`student-second-name` = ?";
+
+        Object student = "Muir";
+
+        int rep = jdbcTemplate.queryForObject(sql, Integer.class,
+                student);
+
+        System.out.println(rep);
     }
 }
