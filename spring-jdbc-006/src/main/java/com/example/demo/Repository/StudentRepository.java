@@ -1,12 +1,16 @@
 package com.example.demo.Repository;
 
+import com.example.demo.Models.DemoModel;
 import com.example.demo.Models.StudentModel;
 import com.example.demo.StudentDao.StudentManipulationDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @Repository
 public class StudentRepository {
@@ -14,6 +18,8 @@ public class StudentRepository {
     StudentManipulationDao studentManipulationDao;
 
     StudentModel studentModel;
+
+
 
     @Autowired
     public void setStudentManipulationDao(StudentManipulationDao studentManipulationDao) {
@@ -81,9 +87,22 @@ public class StudentRepository {
 
     public void addressGroupedRecord() {
 
+        DemoModel demoModel = new DemoModel();
+
+
+
+
+       demoModel.setName("Stephen Muiru");
+
+        System.out.println(demoModel);
+
+       /* System.out.println(demoModel);
         Map<String, List<String>> addressGroupedMap;
 
-        addressGroupedMap = studentManipulationDao.selectAddressGroupedData();
+        addressGroupedMap = studentManipulationDao.selectAddressGroupedData();*/
+
+
+
 
     }
 }

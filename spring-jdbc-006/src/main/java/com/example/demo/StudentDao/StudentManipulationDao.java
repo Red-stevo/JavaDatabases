@@ -61,7 +61,7 @@ public class StudentManipulationDao implements StudentDaoInterface{
 
         String selectSql = "SELECT * FROM studentInfo WHERE `student-first-name` = ?";
 
-        List<Map<String, Object>> studentModels = new ArrayList<>();
+        List<Map<String, Object>> studentModels;
 
         studentModels = jdbcTemplate.query(selectSql, new ResultSetDataExtractor(), studentName);
 
@@ -75,7 +75,7 @@ public class StudentManipulationDao implements StudentDaoInterface{
 
         Map<String,List<String>> groupedStudentMap = jdbcTemplate.query(selectSql,new GroupedDataResultSetExtractor());
 
-        return null;
+        return groupedStudentMap;
     }
 
     public void cleanUpTable()

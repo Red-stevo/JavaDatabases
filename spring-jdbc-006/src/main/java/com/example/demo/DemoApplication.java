@@ -14,17 +14,11 @@ public class DemoApplication {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(DatabaseConfig.class);
 
-		StudentRepository studentRepository = context.getBean("studentRepository", StudentRepository.class);
+		StudentRepository studentRepository = context.getBean(
+				"studentRepository", StudentRepository.class);
 
-	/*	studentRepository.deleteStudentByRegNo("C026-01-0931/2019");
 
-		studentRepository.deleteStudentByNames("James", "Mark");
 
-		studentRepository.findStudentByName("Stephen");
-*/
-		studentRepository.addressGroupedRecord();
-
-		//studentRepository.tableCleanUp();
 
 
 	}
