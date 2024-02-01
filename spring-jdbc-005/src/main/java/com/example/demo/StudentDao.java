@@ -113,7 +113,9 @@ public class StudentDao {
 
         StudentModel studentModel;
 
-       studentModel = jdbcTemplate.queryForObject(studentSelectSql, new BeanPropertyRowMapper<>(StudentModel.class), studentEmail);
+       studentModel = jdbcTemplate.queryForObject(studentSelectSql,
+               new BeanPropertyRowMapper<>(StudentModel.class),
+               studentEmail);
 
         return studentModel;
     }
